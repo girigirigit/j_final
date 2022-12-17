@@ -1,0 +1,326 @@
+
+        /* 초기리셋스타일 */
+        *{  box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        /* rem사용을 위한 루트 사용 설정 */
+        html{
+            font-size:15px;
+        }
+        .container{
+            position: relative;
+            
+        }
+        /* sidebar는 화면을 기준으로 배치 */
+        .container .sidebar{
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 15rem;
+            z-index: 9999;
+            border-right: 0.3px solid #cdcbcb;
+            font-weight: 300;
+            color: #626262;
+           
+
+        }
+        .sidebar .home{
+            font-weight: 450;
+        }
+        .container .sidebar2{
+            background-color: #F5F5F5;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 15rem;
+            /* z-index: 9999; */
+        }
+
+        .container .sidebar ul{
+            list-style: none;
+            padding:2rem;
+            
+        }
+        .sidebar a{
+            text-decoration: none;
+            color: #FFB800;
+        }
+        .sidebar .logo{
+            
+            font-weight: 700;
+            font-size: 40px;
+        }
+        .sidebar ul li{
+            padding-bottom: 3rem;
+        
+        }
+        .listwrap{
+        /* 세로중앙정렬 */
+            display: flex;
+            color: black;
+
+        }
+        .listwrap span{
+            padding-right: 10px;
+            color: #464646;
+
+        }
+        
+
+       
+        /* contents는 container 기준으로 배치 */
+        .container .contents{
+            background-color: #F5F5F5;
+            position: absolute;
+            /* sidebar width와 동일 */
+            left: 15rem;
+            right: 15rem;
+            
+            padding: 1rem;
+            
+            
+
+           
+
+        }
+
+        .box {
+        width: 28px;
+        height: 28px; 
+        border-radius: 70%;
+        
+        margin-top: 8px;
+        margin-bottom: 8px;
+        overflow: hidden;
+        }
+
+        .profile {
+        width: 100%;    
+        height: 100%;
+        object-fit: cover;
+        }
+        .cards{
+            display: flex;
+            justify-content: center;
+            flex-flow: wrap;
+            padding-top: 20px;
+        }
+        .card{
+            
+            font-size: 10px;
+            width: 230px;
+            border-radius: 6%;
+            margin: 10px;
+            background: #FFFFFF;
+            border: 0.3px solid #B4B4B4;
+            border-radius: 15px;
+        }
+        .cardhead{
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .cardhead .name{
+            color: #393939;
+
+            padding-left: 8px;
+        }
+        .cardhead .material-symbols-outlined{
+            position: absolute;
+            right: 0;
+            color: #575757;
+        }
+        .card .contentimg{
+            width: 200px;
+        height: 200px; 
+        border-radius:6%;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right:auto;
+        }
+        .cardconts{
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .cardconts h1{
+            color: #393939;
+            font-size: 16px;
+        }
+        .cardconts p{
+            color: #A5A5A5;
+            padding-bottom: 18px;
+        }
+
+        .sidepf{
+            color: #393939;
+            
+            padding-left: 5px;
+            display: flex;
+            width: 160px;
+            background: #FFFFFF;
+            border: 0.3px solid #B4B4B4;
+            border-radius: 25px;
+            height: 48px;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            
+        }
+        .sidepf .name{
+            padding-left: 10px;
+        }
+        .circleimg{width: 39px;
+        height: 39px; 
+        border-radius: 70%;
+        overflow: hidden;
+        
+
+        }
+        .rdpf{
+            display: flex;
+            align-items: center;
+            
+            margin-bottom: 14px;
+
+        }
+        .rdcnt{
+            font-size: 12px;
+            padding-left: 10px;
+        }
+        .rdcnt .name{
+            color: #393939;
+            font-weight: 450;
+        }
+        .rdcnt p{
+            color: #575757;
+            margin: 0;
+            font-weight: 300;
+
+        }
+
+        footer{
+            font-size: 12px;
+            margin-top: 40px;
+            color: #C8C8C8;
+        }
+        a{text-decoration: none;}
+        input[id*="popup"]{
+            display: none;
+        }
+        input[id*="popup"]:checked + label + div{
+            display: block;
+        }
+
+        
+
+
+        /* 버튼 */
+        input[id*="popup"]+label{
+            display:inline-block;
+            
+            
+            color: #393939;
+        }
+        /* 브라우저 고정하는 위치값 */
+        input[id*="popup"]+label + div{
+           display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+        }
+        input[id*="popup"]+label + div > div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            width:500px;
+            height:500px;
+            background: #fff;
+            z-index: 2;
+            border-radius: 12px;
+        }
+        input[id*=popup]+ label + div > div > label {
+            position: absolute;
+            top: -60%;
+            right: -50%;
+            transform:translate(40%,-40%);
+            padding: 20px;
+            background: #dd5347;
+            border-radius: 100%;
+            z-index:1;
+        }
+        input[id*="popup"]+ label + div > label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:100%;
+            z-index: 1;
+            
+        }
+
+        input[id*="popup"] + label + div > label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.9);
+            z-index: 1;
+        }
+
+        .pickup {text-align: center;
+           
+            position: relative;
+
+        }
+
+        .pickup .chunk {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: 130px;
+
+        }
+        .pickup .making{
+            border-bottom: 1px solid #A7A7A7 ;
+        }
+
+        .chunk .material-symbols-outlined{
+            font-size: 138px;
+            color: #a7a7a7;
+            padding-right: 0;
+
+        }
+        .chunk .drag{
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 0px;
+            
+        }
+        .pickup .choose{
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #FFB800;
+            text-align: center;
+            padding: 8px 28px;
+            border-radius: 12px;
+            
+        }
+
+       
+
+    
+
+    
